@@ -1,6 +1,6 @@
 ## Rails 4 + Mongodb + Devise + Associations Example Application
 
-# Stack
+### Stack
 ```sh
 ruby 2.1.5
 Rails gem 4.1.8
@@ -40,7 +40,7 @@ rails g scaffold User name:string
   end
 ```
 
-### for Models created_at, updated_at fields add the following into the model you want
+#### for Models created_at, updated_at fields add the following into the model you want
 ```sh
 include Mongoid::Timestamps
 ```
