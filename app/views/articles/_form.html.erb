@@ -1,0 +1,42 @@
+<%= form_for @article, :html => { :class => "form-horizontal article" } do |f| %>
+
+    <% if @article.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@article[:name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :message, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :message, :class => 'form-control' %>
+    </div>
+    <%= error_span(@article[:message]) %>
+  </div>
+ 
+      <%= f.hidden_field :user_id, :value => current_user.id ,:class => 'form-control' %>
+
+
+  <br>
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            articles_path, :class => 'btn btn-default' %>
+
+<% end %>
