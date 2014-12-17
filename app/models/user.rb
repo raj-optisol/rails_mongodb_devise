@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
   # Mongoid supplies a timestamping module in Mongoid::Timestamps 
   # which can be included to get basic behavior 
   # for created_at and updated_at fields.
