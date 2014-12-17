@@ -8,7 +8,10 @@ Mongodb 2.6.5
 devise gem 3.4.1
 ```
 
-###Create Rails project with Mongodb
+###You can just checkout and run the application
+
+###Getting started Rails with Mongodb
+
 ```sh
 $ rails new sample_mongodb_app -T -O
 ```
@@ -25,7 +28,7 @@ gem 'bson_ext'
 ```sh
 bundle install:
 rails g mongoid:config
-rails g scaffold Student name:string email:string
+rails g scaffold User name:string
 ```
 #### Add the following method into devise model to fix session conflict error when login with devise
 ```sh
